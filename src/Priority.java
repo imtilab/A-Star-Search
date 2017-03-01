@@ -11,20 +11,22 @@ import java.util.Queue;
  * @author mti
  */
 public class Priority {
+
     //take queue<Integer> and array<Double>
-    //sort the queue based on distance and return sorted sorted queue
-    public static Queue setPriority(Queue<Integer> queue, double[] distance) {
-        
+    //sort the queue based on array and return sorted sorted queue
+
+    public static Queue setPriority(Queue<Integer> queue, double[] array) {
+
         int queueSize = queue.size();
-        //put vertices and respective distance in nodeArray
+        //put vertices and respective array values in nodeArray
         Node[] nodeArray = new Node[queueSize];
         for (int i = 0; i < queueSize; i++) {
             int vertex = queue.poll();
-            nodeArray[i] = new Node(vertex, distance[vertex]);
+            nodeArray[i] = new Node(vertex, array[vertex]);
         }
         queue.clear();
 
-        //sorting nodes based on distance of vertices
+        //sorting nodes based on array of vertices
         for (int i = 0; i < nodeArray.length; i++) {
             for (int j = nodeArray.length - 1; j > i; j--) {
                 if (nodeArray[j].verDist < nodeArray[j - 1].verDist) {
@@ -34,7 +36,7 @@ public class Priority {
                 }
             }
         }
-        
+
         //add sorted vertices back to the queue
         for (int i = 0; i < nodeArray.length; i++) {
             queue.add(nodeArray[i].ver);
@@ -44,6 +46,7 @@ public class Priority {
     }
 }
 //Node class
+
 class Node {
 
     int ver;//vertices
