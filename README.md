@@ -43,6 +43,7 @@ Output:
 1. Shortest Path from source s to destination f. 
 2. Cost from source to destination.
 ```
+---------
 
 A* Search Pseudo code:
 ```
