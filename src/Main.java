@@ -12,7 +12,7 @@ public class Main {
     public static void main (String []args)throws Exception{
         Map map = new Map();
         map.setGraph();
-        map.Dijkstra();
+        map.A_star();
         //map.showGraph();
     }
 }
